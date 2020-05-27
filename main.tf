@@ -13,3 +13,9 @@ provider "azurerm" {
   version = "~>2.4.0"
   features {}
 }
+
+module "demo_module" {
+  source = "./modules/resource_group"
+
+  name   = "terraform-cloud-rg"
+}
