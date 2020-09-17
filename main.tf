@@ -9,6 +9,7 @@ module "resource_group" {
 
   name   = "terraform-cloud-rg"
 }
+
 module "network" {
   source              = "Azure/network/azurerm"
   resource_group_name = module.resource_group.name
@@ -18,6 +19,7 @@ module "network" {
 
   tags = {
     environment = "demo"
+    crayon      = "Hello"
   }
 
   depends_on = [module.resource_group]
